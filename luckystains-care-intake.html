@@ -3,610 +3,606 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>luckystains care — Client Intake</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta name="color-scheme" content="light" />
+  <title>luckystains care — Pricing & FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #1a1a2e;
-      --cream: #ffefba;
-      --pink: #d86d9c;
-      --green: #5D7B3D;
-      --navy-light: #252542;
-      --cream-dim: #f5e8a8;
+      color-scheme: light;
+      --navy:       #1a1a2e;
+      --cream:      #ffefba;
+      --pink:       #d86d9c;
+      --green:      #5D7B3D;
+      --periwinkle: #A8A3FF;
+      --bg:         #fdf6e3;
+      --surface:    #fffcf0;
+      --border:     rgba(26,26,46,0.12);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--navy);
-      color: var(--cream);
+      background: var(--bg);
+      color: var(--navy);
       font-family: 'Nunito', sans-serif;
       font-weight: 300;
       min-height: 100vh;
-      padding: 0 0 80px;
+      padding-bottom: 80px;
     }
 
     /* Header */
     .header {
-      background: var(--navy);
-      border-bottom: 1px solid rgba(255,239,186,0.12);
-      padding: 36px 24px 28px;
+      background: none;
+      padding: 40px 24px 32px;
       text-align: center;
+      border-bottom: 1px solid rgba(168,163,255,0.25);
     }
-
-    .wordmark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px;
-      letter-spacing: 0.25em;
-      text-transform: lowercase;
-      color: var(--cream);
-      opacity: 0.5;
-      margin-bottom: 8px;
-    }
-
-    .header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(26px, 6vw, 38px);
-      font-weight: 400;
-      color: var(--cream);
-      line-height: 1.15;
-    }
-
-    .header h1 em {
-      color: var(--pink);
-      font-style: italic;
-    }
-
-    .header-sub {
-      font-size: 13px;
-      color: var(--cream);
-      opacity: 0.45;
-      margin-top: 10px;
-      line-height: 1.6;
-    }
-
-    /* Clover mark */
     .clover {
       display: block;
       margin: 0 auto 14px;
-      width: 32px;
-      height: 32px;
-      opacity: 0.6;
+      width: 34px; height: 34px;
+    }
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      letter-spacing: 0.28em;
+      text-transform: lowercase;
+      color: var(--navy);
+      opacity: 0.4;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 6vw, 40px);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+    .header h1 em { color: var(--pink); font-style: italic; }
+    .header-sub {
+      font-size: 13px;
+      color: var(--navy);
+      opacity: 0.5;
+      margin-top: 10px;
+      line-height: 1.65;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Form wrapper */
-    .form-wrap {
-      max-width: 600px;
+    /* Page wrap */
+    .wrap {
+      max-width: 640px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     /* Section */
-    .section {
-      margin-top: 44px;
+    .section { margin-top: 48px; animation: fadeUp 0.45s ease both; }
+    .section:nth-child(2) { animation-delay: .06s; }
+    .section:nth-child(3) { animation-delay: .12s; }
+    .section:nth-child(4) { animation-delay: .18s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .section-label {
       font-family: 'Cormorant Garamond', serif;
       font-size: 11px;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--pink);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--pink);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid rgba(216,109,156,0.2);
     }
 
-    .section-title {
+    /* Availability notice */
+    .availability-notice {
+      background: var(--periwinkle);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 32px;
+    }
+    .availability-notice p {
+      font-size: 14px;
+      color: var(--navy);
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .availability-notice p + p { margin-top: 10px; }
+    .availability-notice strong { font-weight: 700; }
+
+    /* Service area */
+    .service-area {
+      background: rgba(93,123,61,0.08);
+      border: 1.5px solid rgba(93,123,61,0.2);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 32px;
+    }
+    .service-area-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .service-area p {
+      font-size: 14px;
+      color: var(--navy);
+      line-height: 1.65;
+      opacity: 0.8;
+    }
+
+    /* Pricing cards */
+    .pricing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .price-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--periwinkle);
+      border-radius: 4px 0 0 4px;
+    }
+    .price-card.overnight::before { background: var(--pink); }
+    .price-card.night::before { background: var(--green); }
+
+    .price-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .price-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .price-card-rate {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--pink);
+      white-space: nowrap;
+    }
+    .price-card-details {
+      font-size: 13px;
+      color: var(--navy);
+      opacity: 0.6;
+      line-height: 1.65;
+    }
+    .price-card-details li {
+      list-style: none;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+    .price-card-details li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--periwinkle);
+    }
+
+    /* Surcharges */
+    .surcharge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .surcharge-row:last-child { border-bottom: none; }
+    .surcharge-label { color: var(--navy); opacity: 0.75; }
+    .surcharge-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    /* Cancellation */
+    .cancel-block {
+      margin-bottom: 16px;
+    }
+    .cancel-type {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--periwinkle);
+      margin-bottom: 8px;
+    }
+    .cancel-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+      background: var(--surface);
+    }
+    .cancel-row span:first-child { color: var(--navy); opacity: 0.7; }
+    .cancel-row span:last-child { font-weight: 600; color: var(--navy); }
+
+    /* Confirmation box */
+    .confirmation-box {
+      background: var(--navy);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-top: 32px;
+    }
+    .confirmation-box p {
+      font-size: 14px;
+      color: var(--cream);
+      line-height: 1.75;
+      opacity: 0.85;
+    }
+    .confirmation-box strong {
+      color: var(--periwinkle);
+      font-weight: 700;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 18px 0;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q:hover { color: var(--pink); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(168,163,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--periwinkle);
+      transition: transform 0.25s, background 0.2s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--periwinkle);
+      color: var(--navy);
+    }
+    .faq-a {
+      display: none;
+      padding: 0 0 18px;
+      font-size: 13px;
+      color: var(--navy);
+      opacity: 0.7;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* Waitlist CTA */
+    .waitlist-box {
+      background: var(--periwinkle);
+      border-radius: 10px;
+      padding: 24px 22px;
+      margin-top: 48px;
+      text-align: center;
+    }
+    .waitlist-box h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px;
       font-weight: 600;
-      color: var(--cream);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255,239,186,0.1);
-    }
-
-    /* Field */
-    .field {
-      margin-bottom: 22px;
-    }
-
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--cream);
-      opacity: 0.8;
-      margin-bottom: 7px;
-      letter-spacing: 0.02em;
-    }
-
-    label .req {
-      color: var(--pink);
-      margin-left: 2px;
-    }
-
-    .hint {
-      font-size: 12px;
-      color: var(--cream);
-      opacity: 0.35;
-      margin-bottom: 7px;
-      line-height: 1.5;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea {
-      width: 100%;
-      background: rgba(255,239,186,0.05);
-      border: 1px solid rgba(255,239,186,0.15);
-      border-radius: 6px;
-      padding: 12px 14px;
-      color: var(--cream);
-      font-family: 'Nunito', sans-serif;
-      font-size: 14px;
-      font-weight: 300;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-      -webkit-appearance: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--pink);
-      background: rgba(216,109,156,0.07);
-    }
-
-    select option {
-      background: var(--navy-light);
-      color: var(--cream);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 90px;
-    }
-
-    /* Checkbox group */
-    .check-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .check-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-    }
-
-    .check-item input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--pink);
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .check-item span {
-      font-size: 13px;
-      color: var(--cream);
-      opacity: 0.75;
-    }
-
-    /* Radio group */
-    .radio-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .radio-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      cursor: pointer;
-    }
-
-    .radio-item input[type="radio"] {
-      width: 16px;
-      height: 16px;
-      accent-color: var(--pink);
-      cursor: pointer;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .radio-item span {
-      font-size: 13px;
-      color: var(--cream);
-      opacity: 0.75;
-      line-height: 1.5;
-    }
-
-    /* Divider */
-    .divider {
-      border: none;
-      border-top: 1px solid rgba(255,239,186,0.07);
-      margin: 32px 0;
-    }
-
-    /* Agreement box */
-    .agreement {
-      background: rgba(255,239,186,0.04);
-      border: 1px solid rgba(255,239,186,0.1);
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 36px;
-    }
-
-    .agreement p {
-      font-size: 13px;
-      color: var(--cream);
-      opacity: 0.55;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    /* Submit */
-    .submit-wrap {
-      margin-top: 32px;
-      text-align: center;
-    }
-
-    button[type="submit"] {
-      background: var(--pink);
       color: var(--navy);
-      border: none;
-      border-radius: 6px;
-      padding: 14px 44px;
+      margin-bottom: 8px;
+    }
+    .waitlist-box p {
+      font-size: 13px;
+      color: var(--navy);
+      opacity: 0.7;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .waitlist-box a {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--cream);
+      text-decoration: none;
+      border-radius: 7px;
+      padding: 13px 36px;
       font-family: 'Nunito', sans-serif;
       font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.15s;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      transition: opacity .2s;
     }
-
-    button[type="submit"]:hover {
-      opacity: 0.88;
-      transform: translateY(-1px);
-    }
-
-    .submit-note {
-      font-size: 12px;
-      color: var(--cream);
-      opacity: 0.3;
-      margin-top: 12px;
-    }
+    .waitlist-box a:hover { opacity: 0.85; }
 
     /* Footer */
     .footer {
       text-align: center;
-      margin-top: 60px;
-      font-size: 11px;
-      color: var(--cream);
-      opacity: 0.2;
-      letter-spacing: 0.1em;
+      margin-top: 64px;
+      padding: 28px 20px;
+      background: var(--bg);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      line-height: 2.2;
     }
-
-    /* Fade in */
-    .section {
-      animation: fadeUp 0.5s ease both;
-    }
-    .section:nth-child(2) { animation-delay: 0.05s; }
-    .section:nth-child(3) { animation-delay: 0.1s; }
-    .section:nth-child(4) { animation-delay: 0.15s; }
-    .section:nth-child(5) { animation-delay: 0.2s; }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
+    .footer-main { color: var(--pink); font-weight: 600; }
+    .footer-tagline {
+      color: var(--green);
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      opacity: 0.85;
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <div class="header">
-    <svg class="clover" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="10" cy="10" r="7" fill="#5D7B3D" opacity="0.7"/>
-      <circle cx="22" cy="10" r="7" fill="#5D7B3D" opacity="0.7"/>
-      <circle cx="10" cy="22" r="7" fill="#5D7B3D" opacity="0.7"/>
-      <circle cx="22" cy="22" r="7" fill="#d86d9c" opacity="0.85"/>
-      <rect x="15" y="18" width="2" height="10" rx="1" fill="#5D7B3D" opacity="0.5"/>
+    <svg class="clover" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="7.5" fill="#5D7B3D" opacity="0.75"/>
+      <circle cx="23" cy="11" r="7.5" fill="#5D7B3D" opacity="0.75"/>
+      <circle cx="11" cy="23" r="7.5" fill="#5D7B3D" opacity="0.75"/>
+      <circle cx="23" cy="23" r="7.5" fill="#d86d9c" opacity="0.9"/>
+      <rect x="16" y="20" width="2.5" height="11" rx="1.25" fill="#5D7B3D" opacity="0.45"/>
     </svg>
     <div class="wordmark">luckystains care</div>
-    <h1>Let's take care of<br/><em>your family</em></h1>
-    <p class="header-sub">This form takes about 5 minutes.<br/>We'll review and be in touch within 24 hours.</p>
+    <h1>Pricing &amp; <em>what to expect</em></h1>
+    <p class="header-sub">Transparent rates, clear policies, and honest answers — before you ever fill out a form.</p>
   </div>
 
-  <div class="form-wrap">
-    <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <div class="wrap">
 
-      <!-- SECTION 1: About You -->
-      <div class="section">
-        <div class="section-label">Section 1</div>
-        <div class="section-title">About You</div>
+    <!-- AVAILABILITY -->
+    <div class="section">
+      <div class="section-label">Availability</div>
+      <div class="section-title">A note on openings</div>
 
-        <div class="field">
-          <label for="name">Full name <span class="req">*</span></label>
-          <input type="text" id="name" name="name" required />
-        </div>
-
-        <div class="field">
-          <label for="phone">Best phone number <span class="req">*</span></label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-
-        <div class="field">
-          <label for="email">Email address <span class="req">*</span></label>
-          <input type="email" id="email" name="email" required />
-        </div>
-
-        <div class="field">
-          <label for="address">Home address, including city and zip <span class="req">*</span></label>
-          <input type="text" id="address" name="address" required />
-        </div>
-
-        <div class="field">
-          <label>How would you prefer we reach you day-to-day? <span class="req">*</span></label>
-          <div class="radio-group">
-            <label class="radio-item"><input type="radio" name="contact_pref" value="Text" required /><span>Text</span></label>
-            <label class="radio-item"><input type="radio" name="contact_pref" value="Phone call" /><span>Phone call</span></label>
-            <label class="radio-item"><input type="radio" name="contact_pref" value="Email" /><span>Email</span></label>
-          </div>
-        </div>
+      <div class="availability-notice">
+        <p>luckystains care operates with <strong>limited independent openings.</strong> I work full-time as a contracted pet care specialist with <strong>VIPet Sitter Services</strong> — a professional, insured service with its own team and service area. If I'm unavailable or bookings are closed, I'm happy to connect you with vetted sitters I trust.</p>
+        <p>Independent slots are offered on a <strong>first-come, first-served basis.</strong> Submitting the intake form holds your place in the queue — confirmation follows once I've reviewed your information.</p>
       </div>
 
-      <!-- SECTION 2: Your Home -->
-      <div class="section">
-        <div class="section-label">Section 2</div>
-        <div class="section-title">Your Home</div>
-
-        <div class="field">
-          <label for="entry1_type">Entry method <span class="req">*</span></label>
-          <p class="hint">At least one entry must be lockbox + key. If you need one, we can help.</p>
-          <select id="entry1_type" name="entry1_type" required>
-            <option value="" disabled selected>Select entry type</option>
-            <option>Lockbox + key</option>
-            <option>Door code / keypad</option>
-            <option>Smart lock</option>
-            <option>Key with neighbor</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="entry1_details">Entry details — code, location, instructions <span class="req">*</span></label>
-          <textarea id="entry1_details" name="entry1_details" required></textarea>
-        </div>
-
-        <div class="field">
-          <label for="alarm">Do you have a home alarm?</label>
-          <select id="alarm" name="alarm">
-            <option value="" disabled selected>Select</option>
-            <option>No</option>
-            <option>Yes</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="alarm_details">If yes — alarm code and arming/disarming instructions</label>
-          <textarea id="alarm_details" name="alarm_details" rows="2"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="parking">Parking — where and any notes <span class="req">*</span></label>
-          <input type="text" id="parking" name="parking" required />
-        </div>
-
-        <div class="field">
-          <label for="hazards">Any hazards to note? (pool, unfenced yard, steep stairs, off-limit areas)</label>
-          <textarea id="hazards" name="hazards" rows="2"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="others_access">Will anyone else have access during the sit? (family, cleaners, contractors)</label>
-          <textarea id="others_access" name="others_access" rows="2" placeholder="If yes — who, when, and what's their role?"></textarea>
-        </div>
+      <div class="service-area">
+        <div class="service-area-label">Service Area</div>
+        <p>Currently serving Broomfield, Westminster, Federal Heights, Northglenn, Arvada, and surrounding areas — roughly Wadsworth to I-25, 144th Avenue to I-70.</p>
       </div>
-
-      <!-- SECTION 3: Emergency Contact + Vet -->
-      <div class="section">
-        <div class="section-label">Section 3</div>
-        <div class="section-title">Emergency Contact & Vet</div>
-
-        <div class="field">
-          <label for="ec_name">Emergency contact — name <span class="req">*</span></label>
-          <input type="text" id="ec_name" name="ec_name" required />
-        </div>
-
-        <div class="field">
-          <label for="ec_relationship">Relationship <span class="req">*</span></label>
-          <input type="text" id="ec_relationship" name="ec_relationship" required />
-        </div>
-
-        <div class="field">
-          <label for="ec_phone">Phone <span class="req">*</span></label>
-          <input type="tel" id="ec_phone" name="ec_phone" required />
-        </div>
-
-        <hr class="divider" />
-
-        <div class="field">
-          <label for="vet_clinic">Veterinary clinic name <span class="req">*</span></label>
-          <input type="text" id="vet_clinic" name="vet_clinic" required />
-        </div>
-
-        <div class="field">
-          <label for="vet_phone">Clinic phone <span class="req">*</span></label>
-          <input type="tel" id="vet_phone" name="vet_phone" required />
-        </div>
-
-        <div class="field">
-          <label>Do you authorize luckystains care to seek emergency vet care if we can't reach you? <span class="req">*</span></label>
-          <div class="radio-group">
-            <label class="radio-item"><input type="radio" name="vet_auth" value="Yes — use my vet or nearest emergency clinic" required /><span>Yes — use my vet or nearest emergency clinic</span></label>
-            <label class="radio-item"><input type="radio" name="vet_auth" value="Yes — but try to reach me first" /><span>Yes — but try to reach me first</span></label>
-            <label class="radio-item"><input type="radio" name="vet_auth" value="No — always wait for my authorization" /><span>No — always wait for my authorization <em style="opacity:0.5">(delays are your responsibility)</em></span></label>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION 4: Your Dog -->
-      <div class="section">
-        <div class="section-label">Section 4</div>
-        <div class="section-title">Your Dog</div>
-
-        <div class="field">
-          <label for="pet_name">Name <span class="req">*</span></label>
-          <input type="text" id="pet_name" name="pet_name" required />
-        </div>
-
-        <div class="field">
-          <label for="pet_breed">Breed <span class="req">*</span></label>
-          <input type="text" id="pet_breed" name="pet_breed" required />
-        </div>
-
-        <div class="field">
-          <label for="pet_age">Age <span class="req">*</span></label>
-          <input type="text" id="pet_age" name="pet_age" required />
-        </div>
-
-        <div class="field">
-          <label for="pet_weight">Weight (approximate)</label>
-          <input type="text" id="pet_weight" name="pet_weight" />
-        </div>
-
-        <div class="field">
-          <label for="pet_fixed">Fixed? <span class="req">*</span></label>
-          <select id="pet_fixed" name="pet_fixed" required>
-            <option value="" disabled selected>Select</option>
-            <option>Yes</option>
-            <option>No</option>
-            <option>Not sure</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="temperament">Temperament with strangers — describe honestly <span class="req">*</span></label>
-          <p class="hint">Anxious, protective, or reactive animals get better care when we know what to expect.</p>
-          <textarea id="temperament" name="temperament" required></textarea>
-        </div>
-
-        <div class="field">
-          <label for="triggers">Known triggers, fears, or behavioral flags</label>
-          <textarea id="triggers" name="triggers"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="food_type">Food type and brand <span class="req">*</span></label>
-          <input type="text" id="food_type" name="food_type" required />
-        </div>
-
-        <div class="field">
-          <label for="food_location">Where is food stored? <span class="req">*</span></label>
-          <input type="text" id="food_location" name="food_location" required />
-        </div>
-
-        <div class="field">
-          <label>Feeding schedule <span class="req">*</span></label>
-          <div class="check-group">
-            <label class="check-item"><input type="checkbox" name="feeding_schedule" value="Morning" /><span>Morning</span></label>
-            <label class="check-item"><input type="checkbox" name="feeding_schedule" value="Midday" /><span>Midday</span></label>
-            <label class="check-item"><input type="checkbox" name="feeding_schedule" value="Evening" /><span>Evening</span></label>
-            <label class="check-item"><input type="checkbox" name="feeding_schedule" value="Late night" /><span>Late night</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="feeding_details">Feeding details — amounts and any special instructions <span class="req">*</span></label>
-          <textarea id="feeding_details" name="feeding_details" required></textarea>
-        </div>
-
-        <div class="field">
-          <label for="walk_routine">Walk and exercise routine <span class="req">*</span></label>
-          <p class="hint">Frequency, duration, leash or off-leash, any restrictions.</p>
-          <textarea id="walk_routine" name="walk_routine" required></textarea>
-        </div>
-
-        <div class="field">
-          <label for="confinement">Where do they sleep / where are they when you're out? <span class="req">*</span></label>
-          <textarea id="confinement" name="confinement" required></textarea>
-        </div>
-
-        <div class="field">
-          <label for="commands">Commands they know — list exactly as trained</label>
-          <p class="hint">If commands are in another language, please note that.</p>
-          <textarea id="commands" name="commands"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="equipment">Training equipment in use — leash type, collar, harness, crate</label>
-          <textarea id="equipment" name="equipment" rows="2"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="owner_words">In your own words — what does your sitter most need to know about this dog? <span class="req">*</span></label>
-          <p class="hint">This appears on our care card in your exact words.</p>
-          <textarea id="owner_words" name="owner_words" required></textarea>
-        </div>
-      </div>
-
-      <!-- SECTION 5: Communication & Agreement -->
-      <div class="section">
-        <div class="section-label">Section 5</div>
-        <div class="section-title">Updates & Agreement</div>
-
-        <div class="field">
-          <label>What updates would you like during a visit?</label>
-          <div class="check-group">
-            <label class="check-item"><input type="checkbox" name="updates" value="Check-in confirmation on arrival" /><span>Check-in confirmation on arrival</span></label>
-            <label class="check-item"><input type="checkbox" name="updates" value="Photo updates" /><span>Photo updates</span></label>
-            <label class="check-item"><input type="checkbox" name="updates" value="Running late alert" /><span>Running late alert</span></label>
-            <label class="check-item"><input type="checkbox" name="updates" value="Confirmation when we leave" /><span>Confirmation when we leave</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>May we share photos of your dog on luckystains care's social media? <span class="req">*</span></label>
-          <p class="hint">Your home will never be shown.</p>
-          <div class="radio-group">
-            <label class="radio-item"><input type="radio" name="photo_use" value="Yes, happy to share" required /><span>Yes, happy to share</span></label>
-            <label class="radio-item"><input type="radio" name="photo_use" value="No, records only" /><span>No — records only</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="anything_else">Anything else you'd like us to know before we meet?</label>
-          <textarea id="anything_else" name="anything_else"></textarea>
-        </div>
-
-        <div class="agreement">
-          <p>By submitting this form, I confirm the information provided is accurate and understand that luckystains care will use it to provide safe, consistent care for my animal and home.</p>
-          <label class="check-item">
-            <input type="checkbox" name="agreement" value="confirmed" required />
-            <span>I confirm — let's do this ♥︎</span>
-          </label>
-        </div>
-
-        <div class="submit-wrap">
-          <button type="submit">Submit Intake</button>
-          <p class="submit-note">We'll be in touch within 24 hours.</p>
-        </div>
-      </div>
-
-    </form>
-
-    <div class="footer">
-      luckystains care &nbsp;★&nbsp; hello@luckystains.org &nbsp;★&nbsp; luckystains.org<br/>
-      <em>the marks left by what we love.</em>
     </div>
+
+    <!-- PRICING -->
+    <div class="section">
+      <div class="section-label">Rates</div>
+      <div class="section-title">Pricing</div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <div class="price-card-header">
+            <div class="price-card-name">Drop-In Visit</div>
+            <div class="price-card-rate">$20</div>
+          </div>
+          <ul class="price-card-details">
+            <li>Walk, feeding, playtime, and a check-in update</li>
+            <li>Base rate within standard service area</li>
+            <li>Fuel charge applies for extended distance</li>
+          </ul>
+        </div>
+
+        <div class="price-card night">
+          <div class="price-card-header">
+            <div class="price-card-name">Evening / Night Sit<br/><span style="font-size:14px;font-weight:400;opacity:0.6;">7pm – 7am</span></div>
+            <div class="price-card-rate">$65</div>
+          </div>
+          <ul class="price-card-details">
+            <li>Full presence — no absences during service hours</li>
+            <li>Your home and animals are never left unattended</li>
+            <li>Ideal for owners who need overnight coverage only</li>
+          </ul>
+        </div>
+
+        <div class="price-card overnight">
+          <div class="price-card-header">
+            <div class="price-card-name">Full Overnight<br/><span style="font-size:14px;font-weight:400;opacity:0.6;">24-hour service</span></div>
+            <div class="price-card-rate">$75</div>
+          </div>
+          <ul class="price-card-details">
+            <li>Up to 4–6 hours personal time, broken throughout the day</li>
+            <li>No single absence exceeds 2 hours including travel</li>
+            <li>Ideal for extended trips and vacation sits</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Surcharges -->
+      <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:24px;">
+        <div class="section-label" style="margin-bottom:12px;">Additional Fees</div>
+        <div class="surcharge-row">
+          <span class="surcharge-label">Fuel charge (15–30 min from base area)</span>
+          <span class="surcharge-amount">+$5</span>
+        </div>
+        <div class="surcharge-row">
+          <span class="surcharge-label">Distance surcharge (per 5 min over 30 min)</span>
+          <span class="surcharge-amount">+$2</span>
+        </div>
+        <div class="surcharge-row">
+          <span class="surcharge-label">Additional pets past 3</span>
+          <span class="surcharge-amount">+$2 each</span>
+        </div>
+      </div>
+
+      <!-- Cancellation -->
+      <div class="cancel-block">
+        <div class="cancel-type">Drop-In Cancellation</div>
+        <div class="cancel-row"><span>24+ hours notice</span><span>Full refund</span></div>
+        <div class="cancel-row"><span>Under 24 hours</span><span>50% charge</span></div>
+        <div class="cancel-row"><span>Same day / no show</span><span>Full charge</span></div>
+      </div>
+
+      <div class="cancel-block" style="margin-top:20px;">
+        <div class="cancel-type">Overnight &amp; Night Sit Cancellation</div>
+        <div class="cancel-row"><span>48+ hours notice</span><span>Full refund</span></div>
+        <div class="cancel-row"><span>Under 48 hours</span><span>50% charge</span></div>
+        <div class="cancel-row"><span>Same day / no show</span><span>Full charge</span></div>
+      </div>
+
+      <!-- Confirmation box -->
+      <div class="confirmation-box">
+        <p><strong>Confirmation required.</strong> A confirmation is required within 24 hours of every scheduled visit. If confirmation is not received, your visit cannot be guaranteed. Please do not assume coverage without a confirmed response — for everyone's sake, especially your animals.</p>
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <div class="section-label">Questions</div>
+      <div class="section-title">FAQ</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What's included in a drop-in visit?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Every drop-in includes a walk, feeding, fresh water, playtime, and a check-in update with photos. I follow your existing routines closely — consistency is what helps animals feel safe, not novelty.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does booking work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Start by submitting the intake form. Independent openings are limited and filled in order of inquiry. Once I've reviewed your information I'll reach out to schedule a meet and greet — no sit begins without one.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if you're unavailable?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">If my independent slots are full, I'll connect you with vetted sitters I personally trust. I also work full-time with VIPet Sitter Services, which has its own team and may be able to assist depending on your location.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do you work with multiple pets?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes — up to 3 pets at the base rate. Additional animals past 3 are $2 each. I have experience with dogs, cats, birds, reptiles, small animals, and fish. Each animal gets a profile and their own care notes on file.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do you handle emergencies?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Every client has three emergency contacts and a designated vet on file. A detailed veterinary form is completed during the consultation. If I can't reach you, I will act in the best interest of your animal according to the authorization you provide on your intake form.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are you insured?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes. I am insured and bonded under Pet Care Insurance (PCI). Your home and animals are covered during every visit.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does the consultation work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">After your intake form is reviewed, we schedule a meet and greet at your home. This is a four-way assessment — your animal, your home, your needs, and whether we're a good fit for each other. A detailed vet form is completed during the consult and emailed to you for your records. No sit is confirmed until this is done.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What's your confirmation policy?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Every scheduled visit requires a confirmation within 24 hours of the appointment. If I haven't heard from you, I cannot guarantee I'll be there. This protects your animals and ensures nothing falls through the cracks on either side.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What's your cancellation policy?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Drop-ins cancelled with 24+ hours notice receive a full refund. Under 24 hours is a 50% charge. Same day or no-show is a full charge. Overnight and night sits require 48 hours notice for a full refund — there is planning involved and your slot closes other bookings.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is this a daily drop-in or a vacation sit?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Both — and it matters for how we set things up. Daily drop-ins are for working pet owners who need regular check-ins. Vacation and extended sits involve a fuller setup including a sweep log of your home at arrival and departure, daily diary entries, and more detailed documentation. You'll be asked this during your intake so we can configure everything correctly.</div>
+      </div>
+
+    </div>
+
+    <!-- WAITLIST CTA -->
+    <div class="waitlist-box">
+      <h3>Ready to get started?</h3>
+      <p>Openings are limited and filled in order. Submit your intake form to hold your place — I'll be in touch within 24 hours.</p>
+      <a href="luckystains-care-intake.html">Start Your Intake</a>
+    </div>
+
   </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-main">luckystains care &nbsp;★&nbsp; hello@luckystains.org &nbsp;★&nbsp; luckystains.org</div>
+    <div class="footer-tagline">the marks left by what we love.</div>
+  </div>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
 
 </body>
 </html>
