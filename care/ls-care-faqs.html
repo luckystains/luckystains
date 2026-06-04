@@ -31,391 +31,134 @@
       cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='20' rx='6' ry='5' fill='%231a1a2e'/%3E%3Cellipse cx='9' cy='14' rx='3' ry='3.5' fill='%231a1a2e'/%3E%3Cellipse cx='23' cy='14' rx='3' ry='3.5' fill='%231a1a2e'/%3E%3Cellipse cx='12' cy='10' rx='2.5' ry='3' fill='%231a1a2e'/%3E%3Cellipse cx='20' cy='10' rx='2.5' ry='3' fill='%231a1a2e'/%3E%3C/svg%3E") 16 16, auto;
     }
 
-    /* Header */
     .header {
       background: none;
       padding: 40px 24px 32px;
       text-align: center;
       border-bottom: 1px solid rgba(168,163,255,0.25);
     }
-    .clover {
-      display: block;
-      margin: 0 auto 14px;
-      width: 34px; height: 34px;
-    }
+    .clover { display: block; margin: 0 auto 14px; width: 34px; height: 34px; }
     .wordmark {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 12px;
-      letter-spacing: 0.28em;
-      text-transform: lowercase;
-      color: var(--navy);
-      opacity: 0.4;
-      margin-bottom: 10px;
+      font-size: 12px; letter-spacing: 0.28em; text-transform: lowercase;
+      color: var(--navy); opacity: 0.4; margin-bottom: 10px;
     }
-    .header h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 6vw, 40px);
-      font-weight: 400;
-      color: var(--navy);
-      line-height: 1.15;
-    }
+    .header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 6vw, 40px); font-weight: 400; color: var(--navy); line-height: 1.15; }
     .header h1 em { color: var(--pink); font-style: italic; }
-    .header-sub {
-      font-size: 13px;
-      color: var(--navy);
-      opacity: 0.5;
-      margin-top: 10px;
-      line-height: 1.65;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .header-sub { font-size: 13px; color: var(--navy); opacity: 0.5; margin-top: 10px; line-height: 1.65; max-width: 420px; margin-left: auto; margin-right: auto; }
 
-    /* Page wrap */
-    .wrap {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
 
-    /* Section */
     .section { margin-top: 48px; animation: fadeUp 0.45s ease both; }
     .section:nth-child(2) { animation-delay: .06s; }
     .section:nth-child(3) { animation-delay: .12s; }
     .section:nth-child(4) { animation-delay: .18s; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-label { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--pink); margin-bottom: 5px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--pink); margin-bottom: 24px; padding-bottom: 10px; border-bottom: 1.5px solid rgba(216,109,156,0.2); }
+
+    .service-divider {
+      display: flex; align-items: center; gap: 16px;
+      margin: 40px 0 32px;
+    }
+    .service-divider-line { flex: 1; height: 1px; background: var(--border); }
+    .service-divider-label {
+      font-family: 'Cormorant Garamond', serif; font-size: 11px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--periwinkle); white-space: nowrap; opacity: 0.8;
     }
 
-    .section-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 11px;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 5px;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--pink);
-      margin-bottom: 24px;
-      padding-bottom: 10px;
-      border-bottom: 1.5px solid rgba(216,109,156,0.2);
-    }
-
-    /* Availability notice */
-    .availability-notice {
-      background: var(--periwinkle);
-      border-radius: 10px;
-      padding: 20px 22px;
-      margin-bottom: 32px;
-    }
-    .availability-notice p {
-      font-size: 14px;
-      color: var(--navy);
-      line-height: 1.7;
-      font-weight: 400;
-    }
+    .availability-notice { background: var(--periwinkle); border-radius: 10px; padding: 20px 22px; margin-bottom: 32px; }
+    .availability-notice p { font-size: 14px; color: var(--navy); line-height: 1.7; font-weight: 400; }
     .availability-notice p + p { margin-top: 10px; }
     .availability-notice strong { font-weight: 700; }
 
-    /* Service area */
-    .service-area {
-      background: rgba(93,123,61,0.08);
-      border: 1.5px solid rgba(93,123,61,0.2);
-      border-radius: 10px;
-      padding: 18px 20px;
-      margin-bottom: 32px;
-    }
-    .service-area-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 8px;
-    }
-    .service-area p {
-      font-size: 14px;
-      color: var(--navy);
-      line-height: 1.65;
-      opacity: 0.8;
-    }
+    .service-area { background: rgba(93,123,61,0.08); border: 1.5px solid rgba(93,123,61,0.2); border-radius: 10px; padding: 18px 20px; margin-bottom: 32px; }
+    .service-area-label { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+    .service-area p { font-size: 14px; color: var(--navy); line-height: 1.65; opacity: 0.8; }
 
-    /* Pricing cards */
-    .pricing-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
+    .pricing-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
 
-    .price-card {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .price-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: var(--periwinkle);
-      border-radius: 4px 0 0 4px;
-    }
+    .price-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 20px; position: relative; overflow: hidden; }
+    .price-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--periwinkle); border-radius: 4px 0 0 4px; }
     .price-card.overnight::before { background: var(--pink); }
     .price-card.night::before { background: var(--green); }
+    .price-card.bd::before { background: var(--periwinkle); }
 
-    .price-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-    .price-card-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.2;
-    }
-    .price-card-rate {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--pink);
-      white-space: nowrap;
-    }
-    .price-card-details {
-      font-size: 13px;
-      color: var(--navy);
-      opacity: 0.6;
-      line-height: 1.65;
-    }
-    .price-card-details li {
-      list-style: none;
-      padding-left: 12px;
-      position: relative;
-      margin-bottom: 3px;
-    }
-    .price-card-details li::before {
-      content: '·';
-      position: absolute;
-      left: 0;
-      color: var(--periwinkle);
-    }
+    .price-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .price-card-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--navy); line-height: 1.2; }
+    .price-card-rate { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--pink); white-space: nowrap; }
+    .price-card-details { font-size: 13px; color: var(--navy); opacity: 0.6; line-height: 1.65; }
+    .price-card-details li { list-style: none; padding-left: 12px; position: relative; margin-bottom: 3px; }
+    .price-card-details li::before { content: '·'; position: absolute; left: 0; color: var(--periwinkle); }
 
-    /* Surcharges */
-    .surcharge-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
-    }
+    .surcharge-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
     .surcharge-row:last-child { border-bottom: none; }
     .surcharge-label { color: var(--navy); opacity: 0.75; }
-    .surcharge-amount {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--green);
-    }
+    .surcharge-amount { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--green); }
 
-    /* Cancellation */
-    .cancel-block {
-      margin-bottom: 16px;
-    }
-    .cancel-type {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--periwinkle);
-      margin-bottom: 8px;
-    }
-    .cancel-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      padding: 8px 12px;
-      border-radius: 6px;
-      margin-bottom: 4px;
-      background: var(--surface);
-    }
+    .cancel-block { margin-bottom: 16px; }
+    .cancel-type { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 8px; }
+    .cancel-row { display: flex; justify-content: space-between; font-size: 13px; padding: 8px 12px; border-radius: 6px; margin-bottom: 4px; background: var(--surface); }
     .cancel-row span:first-child { color: var(--navy); opacity: 0.7; }
     .cancel-row span:last-child { font-weight: 600; color: var(--navy); }
 
-    /* Confirmation box */
-    .confirmation-box {
-      background: var(--navy);
-      border-radius: 10px;
-      padding: 20px 22px;
-      margin-top: 32px;
-    }
-    .confirmation-box p {
-      font-size: 14px;
-      color: var(--cream);
-      line-height: 1.75;
-      opacity: 0.85;
-    }
-    .confirmation-box strong {
-      color: var(--periwinkle);
-      font-weight: 700;
-    }
+    .confirmation-box { background: var(--navy); border-radius: 10px; padding: 20px 22px; margin-top: 32px; }
+    .confirmation-box p { font-size: 14px; color: var(--cream); line-height: 1.75; opacity: 0.85; }
+    .confirmation-box strong { color: var(--periwinkle); font-weight: 700; }
 
-    /* FAQ */
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-    .faq-q {
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
-      padding: 18px 0;
-      font-family: 'Nunito', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--navy);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 18px 0; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 600; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
     .faq-q:hover { color: var(--pink); }
-    .faq-icon {
-      flex-shrink: 0;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: rgba(168,163,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: var(--periwinkle);
-      transition: transform 0.25s, background 0.2s;
-    }
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-      background: var(--periwinkle);
-      color: var(--navy);
-    }
-    .faq-a {
-      display: none;
-      padding: 0 0 18px;
-      font-size: 13px;
-      color: var(--navy);
-      opacity: 0.7;
-      line-height: 1.75;
-    }
+    .faq-icon { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; background: rgba(168,163,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--periwinkle); transition: transform 0.25s, background 0.2s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--periwinkle); color: var(--navy); }
+    .faq-a { display: none; padding: 0 0 18px; font-size: 13px; color: var(--navy); opacity: 0.7; line-height: 1.75; }
     .faq-item.open .faq-a { display: block; }
 
-    /* Policy callout */
-    .policy-callout {
-      margin-top: 16px;
-      background: var(--surface);
-      border: 1.5px solid rgba(216,109,156,0.2);
-      border-radius: 10px;
-      overflow: hidden;
+    .faq-section-label {
+      font-family: 'Cormorant Garamond', serif; font-size: 11px;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--periwinkle); margin: 28px 0 4px; opacity: 0.8;
     }
-    .policy-callout-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 16px 20px;
-      border-bottom: 1px solid rgba(216,109,156,0.1);
-    }
+
+    .policy-callout { margin-top: 16px; background: var(--surface); border: 1.5px solid rgba(216,109,156,0.2); border-radius: 10px; overflow: hidden; }
+    .policy-callout-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; border-bottom: 1px solid rgba(216,109,156,0.1); }
     .policy-callout-row:last-child { border-bottom: none; }
     .policy-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
-    .policy-callout-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--pink);
-      margin-bottom: 4px;
-    }
-    .policy-callout-text {
-      font-size: 13px;
-      color: var(--navy);
-      opacity: 0.65;
-      line-height: 1.65;
-    }
+    .policy-callout-title { font-size: 13px; font-weight: 700; color: var(--pink); margin-bottom: 4px; }
+    .policy-callout-text { font-size: 13px; color: var(--navy); opacity: 0.65; line-height: 1.65; }
 
-    /* Waitlist CTA */
-    .waitlist-box {
-      background: var(--periwinkle);
+    .exchange-callout {
+      margin-top: 32px;
+      background: rgba(168,163,255,0.1);
+      border: 1.5px solid rgba(168,163,255,0.3);
       border-radius: 10px;
-      padding: 24px 22px;
-      margin-top: 48px;
-      text-align: center;
+      padding: 20px 22px;
     }
-    .waitlist-box h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .waitlist-box p {
-      font-size: 13px;
-      color: var(--navy);
-      opacity: 0.7;
-      line-height: 1.65;
-      margin-bottom: 18px;
-    }
-    .waitlist-box a {
-      display: inline-block;
-      background: var(--navy);
-      color: var(--cream);
-      text-decoration: none;
-      border-radius: 7px;
-      padding: 13px 36px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      transition: opacity .2s;
-    }
+    .exchange-callout p { font-size: 14px; color: var(--navy); line-height: 1.7; opacity: 0.85; }
+    .exchange-callout a { color: var(--periwinkle); font-weight: 700; text-decoration: none; }
+    .exchange-callout a:hover { text-decoration: underline; }
+
+    .waitlist-box { background: var(--periwinkle); border-radius: 10px; padding: 24px 22px; margin-top: 48px; text-align: center; }
+    .waitlist-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+    .waitlist-box p { font-size: 13px; color: var(--navy); opacity: 0.7; line-height: 1.65; margin-bottom: 18px; }
+    .waitlist-box a { display: inline-block; background: var(--navy); color: var(--cream); text-decoration: none; border-radius: 7px; padding: 13px 36px; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; transition: opacity .2s; }
     .waitlist-box a:hover { opacity: 0.85; }
 
-    /* Footer */
-    .footer {
-      text-align: center;
-      margin-top: 64px;
-      padding: 28px 20px;
-      background: var(--bg);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      line-height: 2.2;
-    }
+    .footer { text-align: center; margin-top: 64px; padding: 28px 20px; background: var(--bg); font-size: 12px; letter-spacing: 0.08em; line-height: 2.2; }
     .footer-main { color: var(--pink); font-weight: 600; }
-    .footer-tagline {
-      color: var(--green);
-      font-style: italic;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 14px;
-      opacity: 0.85;
-    }
+    .footer-tagline { color: var(--green); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 14px; opacity: 0.85; }
   </style>
 </head>
 <body>
 
-  <!-- Back nav -->
   <nav style="position:fixed;top:0;left:0;right:0;z-index:999;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;background:rgba(253,246,227,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,26,46,0.08);">
     <a href="../index.html" style="font-family:'Cormorant Garamond',serif;font-size:18px;color:#1a1a2e;text-decoration:none;display:flex;align-items:center;gap:8px;opacity:0.7;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">← luckystains</a>
     <a href="ls-care-intake.html" style="font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d86d9c;text-decoration:none;">Start Intake →</a>
   </nav>
   <div style="height:52px;"></div>
 
-  <!-- HEADER -->
   <div class="header">
     <img src="../clover-v2.png" alt="luckystains" class="clover" />
     <div class="wordmark">luckystains care</div>
@@ -432,7 +175,7 @@
 
       <div class="availability-notice">
         <p>luckystains care operates with <strong>limited independent openings.</strong> I work full-time as a contracted pet care specialist with <strong>VIPet Sitter Services</strong> — a professional, insured service with its own team and service area. If I'm unavailable or bookings are closed, I'm happy to connect you with vetted sitters I trust.</p>
-        <p>Independent slots are offered on a <strong>first-come, first-served basis.</strong> Submitting the intake form holds your place in the queue — confirmation follows once I've reviewed your information.</p>
+        <p>Independent slots are capped at <strong>10 pet care clients</strong> and <strong>10 body doubling clients</strong> — 20 total. Both services are offered on a <strong>first-come, first-served basis.</strong> Submitting the intake form holds your place in the queue — confirmation follows once I've reviewed your information.</p>
       </div>
 
       <div class="service-area">
@@ -441,10 +184,10 @@
       </div>
     </div>
 
-    <!-- PRICING -->
+    <!-- PET CARE PRICING -->
     <div class="section">
       <div class="section-label">Rates</div>
-      <div class="section-title">Pricing</div>
+      <div class="section-title">Pet Care Pricing</div>
 
       <div class="pricing-grid">
 
@@ -510,24 +253,13 @@
 
       </div>
 
-      <!-- Surcharges -->
       <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:24px;">
         <div class="section-label" style="margin-bottom:12px;">Additional Fees</div>
-        <div class="surcharge-row">
-          <span class="surcharge-label">Fuel surcharge (under 15 min from base)</span>
-          <span class="surcharge-amount">+$1 / visit</span>
-        </div>
-        <div class="surcharge-row">
-          <span class="surcharge-label">Fuel surcharge (15–30 min from base)</span>
-          <span class="surcharge-amount">+$2 / visit</span>
-        </div>
-        <div class="surcharge-row">
-          <span class="surcharge-label">Additional pets past 3</span>
-          <span class="surcharge-amount">+$2 each</span>
-        </div>
+        <div class="surcharge-row"><span class="surcharge-label">Fuel surcharge (under 15 min from base)</span><span class="surcharge-amount">+$1 / visit</span></div>
+        <div class="surcharge-row"><span class="surcharge-label">Fuel surcharge (15–30 min from base)</span><span class="surcharge-amount">+$2 / visit</span></div>
+        <div class="surcharge-row"><span class="surcharge-label">Additional pets past 3</span><span class="surcharge-amount">+$2 each</span></div>
       </div>
 
-      <!-- Cancellation -->
       <div class="cancel-block">
         <div class="cancel-type">Drop-In Cancellation</div>
         <div class="cancel-row"><span>24+ hours notice</span><span>Full refund</span></div>
@@ -542,12 +274,10 @@
         <div class="cancel-row"><span>Same day / no show</span><span>Full charge</span></div>
       </div>
 
-      <!-- Confirmation box -->
       <div class="confirmation-box">
         <p><strong>Confirmation required.</strong> A confirmation is required within 24 hours of every scheduled visit. If confirmation is not received, your visit cannot be guaranteed. Please do not assume coverage without a confirmed response — for everyone's sake, especially your animals.</p>
       </div>
 
-      <!-- Pre-service requirements -->
       <div class="policy-callout">
         <div class="policy-callout-row">
           <span class="policy-icon">🧹</span>
@@ -564,13 +294,132 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <!-- BODY DOUBLING PRICING -->
+    <div class="section">
+      <div class="service-divider">
+        <div class="service-divider-line"></div>
+        <div class="service-divider-label">also under care · coming soon</div>
+        <div class="service-divider-line"></div>
+      </div>
+
+      <div class="section-label">Rates</div>
+      <div class="section-title">Body Doubling Pricing</div>
+
+      <p style="font-size:14px;color:var(--navy);opacity:0.65;line-height:1.75;margin-bottom:24px;">In-person sessions — you work, I'm present. No pets required. Non-judgmental, full-discretion support for getting things done in your own space. <em>Intake opening soon.</em></p>
+
+      <div class="pricing-grid">
+
+        <div class="price-card bd">
+          <div class="price-card-header">
+            <div class="price-card-name">Session<br/><span style="font-size:14px;font-weight:400;opacity:0.6;">60 minutes</span></div>
+            <div class="price-card-rate">$35</div>
+          </div>
+          <ul class="price-card-details">
+            <li>Focused presence and body doubling during your personal tasks</li>
+            <li>Light home tasks included — mail, plants, packages</li>
+            <li>Invoiced weekly</li>
+          </ul>
+        </div>
+
+        <div class="price-card bd">
+          <div class="price-card-header">
+            <div class="price-card-name">Session<br/><span style="font-size:14px;font-weight:400;opacity:0.6;">90 minutes</span></div>
+            <div class="price-card-rate">$50</div>
+          </div>
+          <ul class="price-card-details">
+            <li>Extended session for deeper work blocks</li>
+            <li>Light home tasks included</li>
+            <li>Invoiced weekly</li>
+          </ul>
+        </div>
+
+        <div class="price-card bd">
+          <div class="price-card-header">
+            <div class="price-card-name">Session<br/><span style="font-size:14px;font-weight:400;opacity:0.6;">120 minutes</span></div>
+            <div class="price-card-rate">$65</div>
+          </div>
+          <ul class="price-card-details">
+            <li>Full two-hour block for big task days</li>
+            <li>Light home tasks included</li>
+            <li>Invoiced weekly</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cancel-block">
+        <div class="cancel-type">Body Doubling Cancellation</div>
+        <div class="cancel-row"><span>48+ hours notice</span><span>Full refund</span></div>
+        <div class="cancel-row"><span>Under 48 hours</span><span>Half session rate</span></div>
+        <div class="cancel-row"><span>Arrival — requirements not met</span><span>Half session rate after 15 min grace</span></div>
+      </div>
+
+      <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:16px 20px;margin-top:20px;margin-bottom:24px;">
+        <div class="section-label" style="margin-bottom:12px;">Flexible Payment Plan</div>
+        <p style="font-size:13px;color:var(--navy);opacity:0.65;line-height:1.65;">Application-based payment plans available for clients navigating a financial rut. Minimum $70/month floor. Rate changes communicated with 60 days notice. Confirmed trades through <a href="../index.html" style="color:var(--periwinkle);font-weight:700;">The Exchange</a> can offset session costs.</p>
+      </div>
+
+      <div class="policy-callout">
+        <div class="policy-callout-row">
+          <span class="policy-icon">📋</span>
+          <div>
+            <div class="policy-callout-title">Intake form required</div>
+            <div class="policy-callout-text">Completed and on file before scheduling. Includes home access setup and all disclosures.</div>
+          </div>
+        </div>
+        <div class="policy-callout-row">
+          <span class="policy-icon">🔑</span>
+          <div>
+            <div class="policy-callout-title">Home access established</div>
+            <div class="policy-callout-text">Lockbox or agreed entry method must be in place before the first session. Two methods required — at least one lockbox.</div>
+          </div>
+        </div>
+        <div class="policy-callout-row">
+          <span class="policy-icon">🧴</span>
+          <div>
+            <div class="policy-callout-title">Cleaning supplies stocked</div>
+            <div class="policy-callout-text">Standard supplies must be present. If depleted on arrival, luckystains care will purchase replacements and bill at cost. Supplies remain yours.</div>
+          </div>
+        </div>
+        <div class="policy-callout-row">
+          <span class="policy-icon">🚶</span>
+          <div>
+            <div class="policy-callout-title">Clear walkways on arrival</div>
+            <div class="policy-callout-text">All primary paths through the home must be navigable. This is a condition of service and a safety requirement.</div>
+          </div>
+        </div>
+        <div class="policy-callout-row">
+          <span class="policy-icon">🐛</span>
+          <div>
+            <div class="policy-callout-title">Pest history disclosed</div>
+            <div class="policy-callout-text">Any infestation history within the past 3 years must be disclosed on the intake form. Active or undisclosed infestations are grounds for immediate service suspension.</div>
+          </div>
+        </div>
+        <div class="policy-callout-row">
+          <span class="policy-icon">🔧</span>
+          <div>
+            <div class="policy-callout-title">Preventive maintenance current</div>
+            <div class="policy-callout-text">No known active issues with pipes or HVAC/furnace. luckystains care is not responsible for pre-existing conditions discovered during a session.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXCHANGE CALLOUT -->
+    <div class="section">
+      <div class="exchange-callout">
+        <p>🌿 &nbsp;<strong>Open to barter and trade.</strong> luckystains care accepts trades — services, goods, meals, art, skill sharing — in place of or alongside payment. Trades are capped at 5 per month and must be equal value, agreed before delivery. Confirmed trades can offset body doubling session costs. <a href="../index.html">Visit The Exchange →</a></p>
+      </div>
     </div>
 
     <!-- FAQ -->
     <div class="section">
       <div class="section-label">Questions</div>
       <div class="section-title">FAQ</div>
+
+      <div class="faq-section-label">Pet Care</div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -601,7 +450,7 @@
           How does booking work?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Start by submitting the intake form. Independent openings are limited and filled in order of inquiry. Once I've reviewed your information I'll reach out to schedule a meet and greet — no sit begins without one.</div>
+        <div class="faq-a">Start by submitting the intake form. Independent openings are limited to 10 pet care clients and filled in order of inquiry. Once I've reviewed your information I'll reach out to schedule a meet and greet — no sit begins without one.</div>
       </div>
 
       <div class="faq-item">
@@ -633,7 +482,7 @@
           Are you insured?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Yes. I am insured and bonded under Pet Care Insurance (PCI). Your home and animals are covered during every visit.</div>
+        <div class="faq-a">Yes. I am insured under Pet Care Insurance (PCI) under a blended Personal Assistant / Pet Sitter classification that covers both pet sitting and body doubling sessions. Your home and animals are covered during every visit.</div>
       </div>
 
       <div class="faq-item">
@@ -668,6 +517,64 @@
         <div class="faq-a">Both — and it matters for how we set things up. Daily drop-ins are for working pet owners who need regular check-ins. Vacation and extended sits involve a fuller setup including a sweep log of your home at arrival and departure, daily diary entries, and more detailed documentation. You'll be asked this during your intake so we can configure everything correctly.</div>
       </div>
 
+      <div class="faq-section-label" style="margin-top:32px;">Body Doubling</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is body doubling?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Body doubling is the practice of working alongside a steady, present companion. Not therapy, not instruction — just regulated presence. If you've ever cleaned your whole apartment while a friend sat on the couch, you already know what it does. It works especially well for neurodivergent people, anyone in life transition, or anyone who finds it hard to start or sustain tasks alone.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What's included in a session?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">You work on whatever you need to work on — I'm present. Light home tasks are included in the session rate: bringing in mail and packages, watering plants, basic tidying as it comes up. Sessions are 60, 90, or 120 minutes, in-person only. There's no agenda and nothing to perform — just the space to get things done.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need to have pets to book body doubling?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">No — body doubling is a standalone service. No pets required. If you do have pets, they're welcome and will be accounted for in the home disclosures on your intake form.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What's the pre-service checklist about?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Because sessions happen in your home, there are baseline conditions that need to be in place before the first session — cleaning supplies stocked, walkways clear, home access established, pest history disclosed, and preventive maintenance current. These aren't hoops — they're the conditions that make it safe and workable for both of us. Full details are on the intake form.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is body doubling confidential?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Completely. What I observe in your home — your space, your belongings, your life — stays with me. luckystains care operates with full discretion. Nothing is shared, reported, or judged. The service is built on trust and that's non-negotiable.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          When does body doubling intake open?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Soon. The service agreement and insurance framework are complete — we're finishing the legal review before opening intake publicly. You can join the interest list on the body doubling page and you'll hear about it before anyone else.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I use a trade to pay for sessions?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes — confirmed trades through The Exchange can offset session costs. A meal or service valued at $35 offsets a 60-minute session. Value must be agreed before it's applied. Trade slots are capped at 5 per month across both services, with needs prioritized over wants when slots are limited.</div>
+      </div>
+
     </div>
 
     <!-- WAITLIST CTA -->
@@ -679,7 +586,6 @@
 
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="footer-main">luckystains care &nbsp;★&nbsp; hello@luckystains.org &nbsp;★&nbsp; luckystains.org</div>
     <div class="footer-tagline">the marks left by what we love.</div>
